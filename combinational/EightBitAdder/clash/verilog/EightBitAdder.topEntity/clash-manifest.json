@@ -1,0 +1,51 @@
+{
+    "components": [
+        "topEntity"
+    ],
+    "dependencies": {
+        "transitive": []
+    },
+    "domains": {},
+    "files": [
+        {
+            "name": "topEntity_shim.cpp",
+            "sha256": "460702d8afc7479b65dad3acb826f56baf7e34f11fea519fb6f597a0c8340150"
+        },
+        {
+            "name": "topEntity.v",
+            "sha256": "5bb9715fa199b9b77e98e813eacf458ee158fe61ca1516d4f2c21ec4c4ba9ccb"
+        }
+    ],
+    "flags": [
+        20,
+        20
+    ],
+    "hash": "f816d8fe31a41e315ab9ca073632802d4d39c6ac8993e2e27cb693d38e12ffee",
+    "top_component": {
+        "name": "topEntity",
+        "ports_flat": [
+            {
+                "direction": "in",
+                "is_clock": false,
+                "name": "a1",
+                "type_name": "[7:0]",
+                "width": 8
+            },
+            {
+                "direction": "in",
+                "is_clock": false,
+                "name": "b",
+                "type_name": "[7:0]",
+                "width": 8
+            },
+            {
+                "direction": "out",
+                "is_clock": false,
+                "name": "result",
+                "type_name": "[7:0]",
+                "width": 8
+            }
+        ]
+    },
+    "version": "unstable"
+}

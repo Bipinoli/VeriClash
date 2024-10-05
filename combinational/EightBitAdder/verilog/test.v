@@ -20,8 +20,8 @@ begin
   $display("%d + %d = %d, carry = %b", A, B, Y, carry_out);
 
   // Test case 2:
-  A = 8'b11101010;
-  B = 8'b11010100;
+  A = 8'b11101010; // 234
+  B = 8'b11010100; // 212
   carry_in = 1;
   #5;
   $display("In decimal: %d + %d + 1 = %d, carry = %b", A, B, Y, carry_out);
