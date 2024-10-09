@@ -5,22 +5,25 @@
 module topEntity
     ( // Inputs
       input  eta // clock
-    , input  eta_0
-    , input [3:0] eta1
+    , input  eta1 // reset
+    , input  eta2 // enable
 
       // Outputs
-    , output reg [3:0] result
+    , output wire [3:0] result
     );
-  wire [0:0] result_selection_res;
+  reg [3:0] result_1 = 4'd0;
 
-  assign result_selection_res = (eta_0);
-
-  always @(*) begin
-    case(result_selection_res)
-      1'b1 : result = 4'd0;
-      default : result = eta1 + 4'd1;
-    endcase
+  // register begin
+  always @(posedge eta or  posedge  eta1) begin : result_1_register
+    if ( eta1) begin
+      result_1 <= 4'd0;
+    end else if (eta2) begin
+      result_1 <= (result_1 + 4'd1);
+    end
   end
+  // register end
+
+  assign result = result_1;
 
 
 endmodule
