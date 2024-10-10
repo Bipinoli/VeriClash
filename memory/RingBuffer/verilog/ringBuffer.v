@@ -7,7 +7,7 @@ module ringBuffer (
     input wire [7:0] datain,
     output reg [7:0] dataout
 );
-    // Memory size = 8
+    // Memory size = 10
     // 10 memory cells of 1 byte size
     reg [7:0] memory [9:0];
 
