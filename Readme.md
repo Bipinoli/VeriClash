@@ -2,6 +2,7 @@
 
 ## Combinational
 - [8-bit ripple carry adder](https://github.com/Bipinoli/VeriClash/tree/main/combinational/EightBitAdder)
+- [8-to-3 Bit Priority Encoder](https://github.com/Bipinoli/VeriClash/tree/main/combinational/PriorityEncoder)
 
 ## Sequential
 - [4-bit counter](https://github.com/Bipinoli/VeriClash/tree/main/sequential/FourBitCounter)
@@ -10,6 +11,6 @@
 ## Memory
 - [Ring buffer](https://github.com/Bipinoli/VeriClash/tree/main/memory/RingBuffer)
 
-## Communication Protocol
-- [UART - Universal asynchronous receiver-transmitter protocol](https://github.com/Bipinoli/VeriClash/tree/main/communication_protocol/UART)
+<!-- ## Communication Protocol
+- [UART - Universal asynchronous receiver-transmitter protocol](https://github.com/Bipinoli/VeriClash/tree/main/communication_protocol/UART) -->
 
