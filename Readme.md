@@ -15,6 +15,9 @@
 ## Digital Signal Processing
 - [FIR filter](https://github.com/Bipinoli/VeriClash/tree/main/signal_processing/FirFilter)
 
+## CPU
+- [CPU in Clash](https://github.com/Bipinoli/VeriClash/tree/main/cpu)
+
 ## Others
 - [Matrix multiplier](https://github.com/Bipinoli/VeriClash/tree/main/other/MatrixMultiplier)
 <!-- ## Communication Protocol
