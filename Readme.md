@@ -12,8 +12,11 @@
 ## Memory
 - [Ring buffer (FIFO)](https://github.com/Bipinoli/VeriClash/tree/main/memory/RingBuffer)
 
+## Digital Signal Processing
+- [FIR filter](https://github.com/Bipinoli/VeriClash/tree/main/signal_processing/FirFilter)
+
 ## Others
-- [Matrix multiplier](https://github.com/Bipinoli/VeriClash/tree/main/complex/MatrixMultiplier)
+- [Matrix multiplier](https://github.com/Bipinoli/VeriClash/tree/main/other/MatrixMultiplier)
 <!-- ## Communication Protocol
 - [UART - Universal asynchronous receiver-transmitter protocol](https://github.com/Bipinoli/VeriClash/tree/main/communication_protocol/UART) -->
 
