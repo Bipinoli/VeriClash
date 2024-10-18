@@ -64,7 +64,7 @@ data OpCode = OP_HLT
             | OP_AND | OP_ORR | OP_NOT 
             | OP_LES | OP_GTR
             | OP_JEZ | OP_JNZ | OP_JMP
-        deriving (Show)
+        deriving (Show, Eq)
 
 data Instr = HLT 
             | MOV R R
@@ -82,7 +82,7 @@ data Instr = HLT
             | JEZ R Imm 
             | JNZ R Imm 
             | JMP Imm
-        deriving (Show)
+        deriving (Show, Eq)
 
 
 nibble2OpCode :: BitVector 4 -> OpCode
@@ -104,11 +104,17 @@ nibble2OpCode nib = case nib of
     0xe -> OP_JNZ
     0xf -> OP_JMP
 
-toUnsigned :: BitVector 4 -> Unsigned 4
+toUnsigned :: KnownNat a => BitVector a -> Unsigned a
 toUnsigned = fromIntegral . toInteger
 
-toImmediate :: BitVector 16 -> Signed 16
+toSigned :: KnownNat a => BitVector a -> Signed a
+toSigned = fromIntegral . toInteger
+
+toImmediate :: KnownNat a => BitVector a -> Signed a
 toImmediate = fromIntegral . toInteger
+
+toBitVector :: KnownNat a => Signed a -> BitVector a
+toBitVector = fromIntegral
 
 decode :: WordSize -> Instr
 decode word = case nibble2OpCode (slice d31 d28 word) of 
