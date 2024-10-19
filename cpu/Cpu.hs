@@ -1,10 +1,16 @@
+-- Non pipelined CPU design based on: https://github.com/Bipinoli/VeriRISCy
+
+-- Current limitations:
+-- 1. Memory is a State within the CPU which should be a device outside connected via bus.Applicative
+-- 2. Memory is not properly parameterised
+-- 3. .... many others to list here ..
+
 module Cpu where
 
 import Clash.Prelude
 import qualified Clash.Sized.Vector as V
 import Clash.Explicit.Testbench
 
--- Non pipelined CPU design based on: https://github.com/Bipinoli/VeriRISCy
 import Instruction (WordSize, Instr(..), R, Imm, decode, encode)
 import Execute (IP, Registers, Memory, State, execute)
 
