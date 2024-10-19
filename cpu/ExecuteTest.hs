@@ -30,7 +30,7 @@ movTest = ("MOV R1 R2", expected, actual)
         instr = MOV 0 1
         (regs, memory, ip) = dummyState
         expectedRegs = (20 :> 20 :> 30 :> Nil) ++ (repeat 0 :: Vec 13 (Signed 32))
-        expected = (expectedRegs, memory, ip)
+        expected = (expectedRegs, memory, ip+1)
         actual = execute dummyState instr
 
 mviTest :: (String, State, State)
@@ -39,7 +39,7 @@ mviTest = ("MVI R1 123", expected, actual)
         instr = MVI 0 123
         (regs, memory, ip) = dummyState
         expectedRegs = (123 :> 20 :> 30 :> Nil) ++ (repeat 0 :: Vec 13 (Signed 32))
-        expected = (expectedRegs, memory, ip)
+        expected = (expectedRegs, memory, ip+1)
         actual = execute dummyState instr
 
 lodTest :: (String, State, State)
@@ -50,7 +50,7 @@ lodTest = ("LOD R1 R2 123", expected, actual)
         regs' = replace 1 1 regs
         memory' = replace 124 100 memory
         expectedRegs = (100 :> 1 :> 30 :> Nil) ++ (repeat 0 :: Vec 13 (Signed 32))
-        expected = (expectedRegs, memory', ip)
+        expected = (expectedRegs, memory', ip+1)
         actual = execute (regs', memory', ip) instr
 
 strTest :: (String, State, State)
@@ -60,7 +60,7 @@ strTest = ("STR R1 R2 -2", expected, actual)
         (regs, memory, ip) = dummyState
         regs' = replace 1 126 regs
         expectedMem = replace 124 10 memory
-        expected = (regs', expectedMem, ip)
+        expected = (regs', expectedMem, ip+1)
         actual = execute (regs', memory, ip) instr
 
 subTest :: (String, State, State)
@@ -69,7 +69,7 @@ subTest = ("SUB R1 R2 R3", expected, actual)
         instr = SUB 0 1 2
         (regs, memory, ip) = dummyState
         expectedRegs = (-10 :> 20 :> 30 :> Nil) ++ (repeat 0 :: Vec 13 (Signed 32))
-        expected = (expectedRegs, memory, ip)
+        expected = (expectedRegs, memory, ip+1)
         actual = execute dummyState instr
 
 jezTest :: (String, State, State)
@@ -86,7 +86,7 @@ gtrTest = ("GTR R1 R2 R3", expected, actual)
         instr = GTR 0 1 2
         (regs, memory, ip) = dummyState
         expectedRegs = (0 :> 20 :> 30 :> Nil) ++ (repeat 0 :: Vec 13 (Signed 32))
-        expected = (expectedRegs, memory, ip)
+        expected = (expectedRegs, memory, ip+1)
         actual = execute dummyState instr
 
 jnzTest :: (String, State, State)
